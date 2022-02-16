@@ -11,37 +11,31 @@ for i,j in enumerate(dayslist):
 
 
 #5
-s = 15435
-if s < 0:
-    s*=-1
-    ans = []
-    temp = list(map(int, str(s)))
-    print(temp)
+s = -15435
 
-    for i in range(len(temp)):
-        x = temp.copy()
-        if temp[i] == 5:
-            x.pop(i)
-            substr = [str(i) for i in x]
-            res = int(''.join(substr))*-1
-            print(res)
-            ans.append(int(res))
-    print(ans)
-    print(min(ans))
-else:
-    ans = []
-    temp = list(map(int, str(s)))
-    print(temp)
+s_cpy = s
+# print(s_cpy)
 
-    for i in range(len(temp)):
-        x = temp.copy()
-        if temp[i] == 5:
-            x.pop(i)
-            substr = [str(i) for i in x]
-            res = int(''.join(substr))
-            print(res)
-            ans.append(int(res))
-    print(ans)
+if s_cpy < 0:
+    s_cpy*=-1
+    
+# print(s_cpy)
+# print(s)
+
+ans = []
+temp = list(map(int, str(s_cpy)))
+# print(temp)
+
+for i in range(len(temp)):
+    x = temp.copy()
+    if temp[i] == 5:
+        x.pop(i)
+        substr = [str(i) for i in x]
+        res = int(''.join(substr))*-1 if s < 0 else int(''.join(substr))
+        # print(res)
+        # print('         ')
+        ans.append(int(res))
+print(ans)
 
 
 #-1 1
