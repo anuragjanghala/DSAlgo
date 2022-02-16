@@ -34,7 +34,7 @@ for i in range(len(temp)):
         res = int(''.join(substr))*-1 if s < 0 else int(''.join(substr))
         # print(res)
         # print('         ')
-        ans.append(int(res))
+        ans.append(res)
 print(ans)
 
 
