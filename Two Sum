@@ -1,0 +1,20 @@
+Two Sum | (https://leetcode.com/problems/two-sum/)
+
+# brute force
+# for i in range(len(nums)-1):
+#     for j in range(i+1, len(nums)):
+#         if nums[i]+nums[j] == target:
+#             return [i,j]
+
+
+
+
+# HASHMAP -> Val : Index
+# it will hold previous values to the current value in array
+
+valMap = {}
+for i, n in enumerate(nums):
+    if target -n in valMap:
+        return [valMap[target-n], i]
+    valMap[n] = i
+                
