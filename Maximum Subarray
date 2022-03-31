@@ -1,0 +1,14 @@
+Maximum Subarray  | https://leetcode.com/problems/maximum-subarray/
+
+
+# Size-Changing Sliding Window Approach
+
+msum = nums[0]
+csum = 0
+
+for n in nums:
+    if csum < 0:
+        csum = 0
+    csum += n
+    msum = max(msum, csum)
+return msum
