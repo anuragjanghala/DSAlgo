@@ -1,0 +1,19 @@
+Maximum Product Subarray  | https://leetcode.com/problems/maximum-product-subarray/
+
+
+
+
+mpro = max(nums)
+cmax, cmin = 1,1
+
+for n in nums:
+    if n == 0:
+        cmax,cmin = 1,1
+
+    temp = n*cmax
+
+    cmax = max(n*cmax, n*cmin, n)
+    cmin = min(temp, n*cmin, n)
+    mpro = max(mpro, cmax)
+
+return mpro
