@@ -1,0 +1,14 @@
+Fair Candy Swap | https://leetcode.com/problems/fair-candy-swap/
+
+
+class Solution:
+    def fairCandySwap(self, aliceSizes: List[int], bobSizes: List[int]) -> List[int]:
+                
+        t_a, t_b = sum(aliceSizes), sum(bobSizes)
+        avg = int((t_a+t_b)/2)
+        hashset = set(bobSizes)
+        
+        for i in range(len(aliceSizes)):
+            reqcandies = avg - (t_a - aliceSizes[i])
+            if reqcandies in hashset:
+                return [aliceSizes[i], reqcandies]
